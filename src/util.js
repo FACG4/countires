@@ -14,17 +14,12 @@ return tempArr;
 
 
 function search(name){
+
   console.log(name);
   console.log(returnList(name[0]).filter(country => country.startsWith(name)))
-  // console.log(returnList('A').startsWith(name))
-}
-// search('')
-// search('Pa')
-// console.log('-------------');
-// search('Pal')
-// console.log('-------------');
-// search('Pale')
 
+ 
+}
 
 
 if(typeof module !== undefined){
