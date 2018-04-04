@@ -1,6 +1,8 @@
-let fs = require('fs');
-let path = require('path');
+const fs = require('fs');
+const path = require('path');
+const search = require('./util');
 //handler function
+let queryString = require('querystring');
 
  handler = (request, response) => {
   let endpoint = request.url;
@@ -15,8 +17,19 @@ let path = require('path');
       }
     });
   }
-  else if (endpoint == '/action'){
-    response.writeHead(200, {'Content-type': 'text/plain'});
+  else if (endpoint == '/input'){
+    response.writeHead(302, {'Location': '/'});
+    let allData = '';
+    request.on('data', (chunk) => allData += chunk)
+    request.on('end', () => {
+      allData = allData.replace('input=','');
+      // console.log(allData);
+      // console.log(allData.replace('input=',''));
+
+      search(allData);
+      response.end();
+    })
+
 
   }
 }
