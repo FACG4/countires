@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/FACG4/countires/issues"
   },
-  "homepage": "https://github.com/FACG4/countires#readme"
+
+  "homepage": "https://github.com/FACG4/countires#readme",
+  "dependencies": {
+    "tape": "^4.9.0"
+  }
+
 }
