@@ -1,0 +1,22 @@
+{
+  "name": "countires",
+  "version": "1.0.0",
+  "description": "FACG4 week-4 project",
+  "main": "index.js",
+  "directories": {
+    "test": "tape ./test/test.js"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG4/countires.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG4/countires/issues"
+  },
+  "homepage": "https://github.com/FACG4/countires#readme"
+}
