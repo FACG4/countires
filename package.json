@@ -4,10 +4,10 @@
   "description": "FACG4 week-4 project",
   "main": "index.js",
   "directories": {
-    "test": "tape ./test/test.js"
+    "test": "test"
   },
   "scripts": {
-    "test": "test"
+    "test": "tape /test/test"
   },
   "repository": {
     "type": "git",
