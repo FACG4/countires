@@ -1,12 +1,10 @@
-
+let input = document.querySelector('#input');
 let searchButton = document.getElementById('button')
-let value = document.querySelector('#input')
-let lat;
-let lng;
 
 searchButton.addEventListener('click', (event)=>{
   event.preventDefault();
-  getLocation(value.value);
+  if(input.value)
+    getLocation(input.value);
 })
 
 
@@ -26,11 +24,11 @@ function fetch(url, callback) {
 
 
 function getLocation (value) {
-  var url = `http://maps.google.com/maps/api/geocode/json?address=${value}&sensor=false`
+  var url = `https://maps.google.com/maps/api/geocode/json?key=AIzaSyB_BwgHSTEymzq4ylzuJvpb-e4n7WHPuEw&address=${value}&sensor=false`
     fetch(url, function (response) {
-      lat = response.results[0].geometry.location.lat
-      lng = response.results[0].geometry.location.lng
-      displayMap()
+      const lat = response.results[0].geometry.location.lat
+      const lng = response.results[0].geometry.location.lng
+      displayMap(lat,lng)
     })
 
   }
@@ -38,7 +36,7 @@ function getLocation (value) {
 /////////////////////////////
 
 
-function displayMap() {
+function displayMap(lat, lng) {
     var uluru = {lat: lat, lng: lng};
 
     var map = new google.maps.Map(document.getElementById('map'), {
