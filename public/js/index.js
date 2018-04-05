@@ -1,12 +1,10 @@
-var inputNode = document.querySelector('#input');
-var dataNode = document.querySelector('#dataList');
-var inputValue = document.getElementById('input');
+let dataNode = document.querySelector('#dataList');
 
-inputNode.addEventListener('input', function(x){
+input.addEventListener('input', function(x){
   x.preventDefault();
   dataNode.innerHTML = '';
-
-getData();
+  if(input.value)
+  getData();
 });
 
 function fetch(url, callback){
@@ -18,7 +16,7 @@ function fetch(url, callback){
     }
   }
   xhr.open('POST', url);
-  xhr.send(inputValue.value);
+  xhr.send(input.value);
 }
 
 function getData(){

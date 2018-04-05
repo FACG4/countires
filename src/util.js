@@ -1,18 +1,15 @@
 var countries = require('./country.json')
 
 
-function returnList(input){
-  var tempArr = countries[input].countries.map(x=>x.country)
-return tempArr;
-}
-
-var result;
 function search(name){
 
-  result = returnList(name[0]).toUpperCase().filter(country => country.startsWith(name));
+  if(name){
+  let newName = name.slice(1).toLowerCase();
+  let firstLetter = name[0].toUpperCase()
+  var countriesArr = countries[firstLetter].countries.map(x=>x.country)
+  return countriesArr.filter(country => country.startsWith(firstLetter+newName));
 
-
-  return result;
+  }
 }
 
-module.exports = search;
+module.exports.search = search;

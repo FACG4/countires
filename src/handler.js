@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const search = require('./util');
+const util = require('./util');
 
 
  const handler = (request, response) => {
@@ -57,7 +57,7 @@ const search = require('./util');
     request.on('data', (chunk) => allData += chunk)
     request.on('end', () => {
       allData = allData.replace('input=','');
-      var result = search(allData);
+      var result = util.search(allData);
       response.end(JSON.stringify(result));
 
     });
