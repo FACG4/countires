@@ -2,17 +2,19 @@ const fs = require('fs');
 const path = require('path');
 const search = require('./util');
 //handler function
-let queryString = require('querystring');
+// let queryString = require('querystring');
 
  handler = (request, response) => {
   let endpoint = request.url;
   if(endpoint == '/'){
-    response.writeHead(200, {'Content-type': 'text/html'});
     fs.readFile(path.join(__dirname, '../public/index.html'), function(error, file){
       if(error){
-        console.log(error)
-        return;
+        console.log(error,'error');
+        response.writeHead(500, {'Content-type': 'text/html'});
+        response.end('<h2>Internal Server Error</h2>');
+        // console.log(error)
       } else {
+        response.writeHead(200, {'Content-type': 'text/html'});
         response.end(file);
       }
     });
@@ -31,6 +33,24 @@ let queryString = require('querystring');
     })
 
 
+  }
+  else if (endpoint.startsWith('/public')) {
+    const extention = endpoint.split('.')[1];
+    const fileType = {
+      html: 'text/html',
+      css: 'text/css',
+      js: 'application/javascript',
+      ico: 'image/x-icon'
+    }
+    fs.readFile(path.join(__dirname, '..', endpoint), (error, file) => {
+      if (error) {
+        response.writeHead(500, 'content-Type: text/html');
+        response.end('<h1>internal server Error</h1>');
+      } else {
+        response.writeHead(200, 'content-Type: ' + fileType[extention]);
+        response.end(file);
+      }
+    });
   }
 }
 
