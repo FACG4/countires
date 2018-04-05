@@ -9,9 +9,10 @@ return tempArr;
 var result;
 function search(name){
 
-  result = returnList(name[0]).filter(country => country.startsWith(name));
+  result = returnList(name[0]).toUpperCase().filter(country => country.startsWith(name));
 
-  return result
+
+  return result;
 }
 
 module.exports = search;
