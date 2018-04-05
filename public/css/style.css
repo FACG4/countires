@@ -1,4 +1,12 @@
-#map {
-  height: 400px;
-  width: 100%;
- }
+html {
+  display: flex;
+  justify-content: center;
+  background: url("../img2.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.header {
+  padding-top: 80px;
+}

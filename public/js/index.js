@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+console.log('sssklsjhg');
+var inputSearch = document.querySelector('#input');
+// console.log('inputSearch' , inputSearch.value);
+// inputSearch.addEventLis
+inputSearch.addEventListener("keyup", function(){
+  console.log(inputSearch.value);
+})
+=======
 let dataNode = document.querySelector('#dataList');
 
 input.addEventListener('input', function(x){
@@ -28,3 +37,4 @@ function getData(){
    })
  })
 }
+>>>>>>> bd372a9140d523bb4353470ece5a240b8a72520d
