@@ -19,3 +19,13 @@ A one-page website that allows you to quickly find and select a country's name u
 
 **Test**
 * test
+
+What we've learned:
+* How to write in ECMA6.
+* Linking the server side and client side and exchanging information between them.
+* How to create and test servers locally.
+* How to use the Heroku platform.
+
+#### Two Tests for back end.
+
+#### Uploaded on Heroku app.
