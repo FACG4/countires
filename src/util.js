@@ -8,10 +8,12 @@ return tempArr;
 
 var result;
 function search(name){
-
-  result = returnList(name[0]).filter(country => country.startsWith(name));
-
+  if(name){
+  let newName = name.slice(1).toLowerCase();
+  let firstLetter = name[0].toUpperCase()
+  result = returnList(firstLetter).filter(country => country.startsWith(firstLetter+newName));
   return result
+  }
 }
 
-module.exports = search;
+module.exports.search = search;
