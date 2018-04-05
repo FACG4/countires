@@ -4,33 +4,35 @@
 <head>
   <meta charset="utf-8">
   <title>Country Search</title>
-  <!-- <link rel="stylesheet" href="public/css/style.css"> -->
+  <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
 
-      <div class="header">
   <div id="search-box">
-          <div class="header">
-    <form class="" action='/input' method="post">
 
 
+      <input id='input' type="text" name = 'input' list='dataList' onchange="">
+      <datalist id="dataList">
 
-
-      <input id='input' type="text" name = 'input'>
-
+      </datalist>
       </input>
-      <button type="submit">Search</button>
+      <button id ='button' type="submit">Search</button>
+</div>
 
-    </form>
-  </div>
 
   <div id="map">
 
 
   </div>
-  <!-- /home/razan/countires -->
-  <!-- <script type="text/javascript" src="public/js/index.js"></script> -->
+
+  <script async defer
+
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_BwgHSTEymzq4ylzuJvpb-e4n7WHPuEw">
+  </script>
+  <script src='./js/geoScript.js'></script>
+  <script src ='./js/index.js'> </script>
 </body>
 
 </html>
