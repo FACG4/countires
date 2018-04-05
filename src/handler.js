@@ -58,7 +58,6 @@ const search = require('./util');
     request.on('end', () => {
       allData = allData.replace('input=','');
       var result = search(allData);
-
       response.end(JSON.stringify(result));
 
     });

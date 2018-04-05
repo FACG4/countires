@@ -1,13 +1,11 @@
 
 let searchButton = document.getElementById('button')
-// let inputValue = document.getElementById('input').value
 let value = document.querySelector('#input')
 let lat;
 let lng;
 
 searchButton.addEventListener('click', (event)=>{
   event.preventDefault();
-  console.log(value.value)
   getLocation(value.value);
 })
 
