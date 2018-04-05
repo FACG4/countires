@@ -9,20 +9,24 @@
 
 <body>
   <div id="search-box">
-    <form class="" action='/input' method="post">
 
 
-      <input id='input' type="text" name = 'input'>
+      <input id='input' type="text" name = 'input' list='dataList' onchange="">
+      <datalist id="dataList">
 
+      </datalist>
       </input>
-      <button type="submit">Search</button>
+      <button id ='button' type="submit">Search</button>
 
-    </form>
   </div>
 
   <div id="map">
 
   </div>
 </body>
+
+<script src ='./js/index.js'>
+
+</script>
 
 </html>
