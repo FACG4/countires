@@ -1,4 +1,5 @@
 var countries = require('./country.json')
+// const data = require('./router');
 // console.log(countries)
 // var arr = [];
 
@@ -12,10 +13,11 @@ function returnList(input){
 return tempArr;
 }
 
-
+var result;
 function search(name){
-  console.log(name);
-  console.log(returnList(name[0]).filter(country => country.startsWith(name)))
+  result = returnList(name[0]).filter(country => country.startsWith(name));
+
+  return result
   // console.log(returnList('A').startsWith(name))
 }
 // search('')
@@ -27,6 +29,4 @@ function search(name){
 
 
 
-if(typeof module !== undefined){
-  module.exports = search;
-}
+module.exports = search;
