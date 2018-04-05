@@ -17,7 +17,6 @@ function fetch(url, callback){
       callback(response);
     }
   }
-  console.log(inputValue.value);
   xhr.open('POST', url);
   xhr.send(inputValue.value);
 }
