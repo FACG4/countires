@@ -8,10 +8,10 @@ input.addEventListener('input', function(x){
 });
 
 function fetch(url, callback){
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function(){
     if(xhr.readyState === 4 && xhr.status === 200){
-      var response = JSON.parse(xhr.responseText);
+      let response = JSON.parse(xhr.responseText);
       callback(response);
     }
   }
@@ -22,7 +22,7 @@ function fetch(url, callback){
 function getData(){
  fetch('/input', function(response){
    response.forEach(x => {
-     var option = document.createElement('option');
+     let option = document.createElement('option');
      option.value = x;
      dataNode.appendChild(option);
    })

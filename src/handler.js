@@ -76,8 +76,8 @@ const util = require('./util');
     request.on('data', (chunk) => allData += chunk)
     request.on('end', () => {
       allData = allData.replace('input=','');
-      var result = util.search(allData);
-      response.end(JSON.stringify(result));
+      let result = util.search(allData);
+      response.end(JSON.stringify(result),'utf8');
 
     });
 
