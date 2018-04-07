@@ -25,7 +25,26 @@ const util = require('./util');
         response.end(file);
       }
     });
-  }else if (endpoint == '/js/index.js'){
+  }
+
+
+  else if (endpoint == '/css/img3.jpg'){
+    response.writeHead(200, {'Content-Type': 'image/jpg'});
+    fs.readFile(path.join(__dirname, '../public/css/img3.jpg'), function(error, file){
+
+      if(error){
+        console.log(error)
+        return;
+      } else {
+        response.end(file);
+      }
+    });
+
+
+  }
+
+
+  else if (endpoint == '/js/index.js'){
     response.writeHead(200, {'Content-type': 'text/js'});
     fs.readFile(path.join(__dirname, '../public/js/index.js'), function(error, file){
 
