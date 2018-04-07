@@ -10,10 +10,10 @@ searchButton.addEventListener('click', (event)=>{
 
 ///////////////////////////
 function fetch(url, callback) {
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      var response = JSON.parse(xhr.responseText);
+      let response = JSON.parse(xhr.responseText);
       callback(response);
     }
 
@@ -24,7 +24,7 @@ function fetch(url, callback) {
 
 
 function getLocation (value) {
-  var url = `https://maps.google.com/maps/api/geocode/json?key=AIzaSyB_BwgHSTEymzq4ylzuJvpb-e4n7WHPuEw&address=${value}&sensor=false`
+  let url = `https://maps.google.com/maps/api/geocode/json?key=AIzaSyB_BwgHSTEymzq4ylzuJvpb-e4n7WHPuEw&address=${value}&sensor=false`
     fetch(url, function (response) {
       const lat = response.results[0].geometry.location.lat
       const lng = response.results[0].geometry.location.lng
@@ -37,13 +37,12 @@ function getLocation (value) {
 
 
 function displayMap(lat, lng) {
-    var uluru = {lat: lat, lng: lng};
-
-    var map = new google.maps.Map(document.getElementById('map'), {
+    let uluru = {lat: lat, lng: lng};
+    let map = new google.maps.Map(document.getElementById('map'), {
       zoom: 4,
       center: uluru
     });
-    var marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
       position: uluru,
       map: map
     });
